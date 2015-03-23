@@ -1,361 +1,474 @@
 layout: true
 class: center, middle
----
-# Remark
-[ riiid 향 첨가 ]
-.footnote.pull-right[🍴  on [github](https://github.com/riiid/remark)]
 
 ---
-class: center, middle, inverse1
-# Riiid
+
+# 알아두면 유용한 명령어들
+
+변용훈
+[@river](http://twitter.com/river)
 
 ---
-class: center, middle, inverse2
-# Flavored
 
----
-class: center, middle, inverse3
-# Remark !!
-
----
-background-image: url(img/renote_back_color_none.jpg)
-# Title with Background
-
----
-background-image: url(img/renote_back_black_none.jpg)
-# Title with Background
-
----
 layout: false
-.left-column[
-  ## What is it?
-]
-.right-column[
-  A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS, featuring:
+class: center, middle
 
-- Markdown formatting, with smart extensions
+## @river
 
-- Presenter mode, with cloned slideshow view
+Server Side Developer
 
-- Syntax highlighting, supporting a range of languages
+\- Classic ASP<br>
+\- PHP
 
-- Slide scaling, thus similar appearance on all devices / resolutions .pink[*]
+<img src="img/profile.jpg" style="border-radius:200px" width="150">
 
-- Touch support for smart phones and pads, i.e. swipe to navigate slides
-
-.footnote[.pink[*] At least browsers try their best]
-]
-
----
-.left-column[
-  ## What is it?
-  ## Why use it?
-]
-.right-column[
-If your ideal slideshow creation workflow contains any of the following steps:
-
-- Just write what's on your mind
-
-- Do some basic styling
-
-- Easily collaborate with others
-
-- Share with and show to everyone
-
-Then remark might be perfect for your next.indigo[*] slideshow!
-
-.footnote[.indigo[*] You probably want to convert existing slideshows as well]
-]
----
-.left-column[
-  ## What is it?
-  ## Why use it?
-]
-.right-column[
-As the slideshow is expressed using Markdown, you may:
-
-- Focus on the content, expressing yourself in next to plain text not worrying what flashy graphics and disturbing effects to put where
-
-As the slideshow is actually an HTML document, you may:
-
-- Display it in any decent browser
-
-- Style it using regular CSS, just like any other HTML content
-
-- Use it offline!
-
-As the slideshow is contained in a plain file, you may:
-
-- Store it wherever you like; on your computer, hosted from your Dropbox, hosted on Github Pages alongside the stuff you're presenting...
-
-- Easily collaborate with others, keeping track of changes using your favourite SCM tool, like Git or Mercurial
-]
----
-class: inverse1
-## How does it work, then?
----
-name: how
-class: inverse1
-
-.left-column[
-  ## How does it work?
-### - Markdown
-]
-.right-column[
-A Markdown-formatted chunk of text is transformed into individual slides by JavaScript running in the browser:
-
-```remark
-# Slide 1
-This is slide 1
 
 ---
 
-# Slide 2
-This is slide 2
+class: center, middle
+
+### 기본 명령어 중 제가 자주 사용하는 것들
+### 몰라도 되지만 알면 조금이라도 편할 수 있는 것들
+### OS X 위주로 설명 및 데모
+
+---
+
+layout: false
+
+## Agenda
+
+* 설치
+* 에디터
+* 시스템
+  - 파일
+  - 디렉토리
+  - 프로세스
+* git
+* web 관련
+* QnA
+
+---
+
+## homebrew
+
+http://brew.sh/
+
+The missing package manager for OS X .red[*]
+
+- Install
+
+```bash
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 ```
 
-.slides[
-  .first[
-  ### Slide 1
-  This is slide 1
-  ]
-  .second[
-  ### Slide 2
-  This is slide 2
-  ]
-]
+- Usage
 
-Regular Markdown rules apply with only a single exception:
-
-  - A line containing three dashes constitutes a new slide
-  (not a horizontal rule, `&lt;hr /&gt;`)
-
-Have a look at the [Markdown website](http://daringfireball.net/projects/markdown/) if you're not familiar with Markdown formatting.
-]
----
-class: inverse1
-.left-column[
-  ## How does it work?
-  ### - Markdown
-  ### - Inside HTML
-]
-.right-column[
-A simple HTML document is needed for hosting the styles, Markdown and the generated slides themselves:
-
-```xml
-<!DOCTYPE html>
-<html>
-  <head>
-    <style type="text/css">
-      /* Slideshow styles */
-    </style>
-  </head>
-  <body>
-*    <textarea id="source">
-      <!-- Slideshow Markdown -->
-    &lt;/textarea&gt;
-*    <script type="text/javascript" src="remark.js">
-    </script>
-    <script type="text/javascript">
-*      var slideshow = remark.create();
-    </script>
-  </body>
-</html>
+```bash
+$ brew install tree
+$ brew uninstall tree
+$ brew info tree
+$ brew search tree
+$ brew update
 ```
 
-You may download remark to have your slideshow not depend on any online resources, or reference the [latest version](http://remarkjs.com/downloads/remark-latest.min.js) online directly.
-]
----
-class: inverse2
-## Of course, Markdown can only go so far.
----
-class: inverse2
-.left-column[
-  ## Markdown extensions
-]
-.right-column[
-To help out with slide layout and formatting, a few Markdown extensions have been included:
-
-- Slide properties, for naming, styling and templating slides
-
-- Content classes, for styling specific content
-
-- Syntax highlighting, supporting a range of languages
-]
+.footnote[.red[*] linuxbrew]
 
 ---
-class: inverse2
-.left-column[
-  ## Markdown extensions
-  ### - Slide properties
-]
-.right-column[
-Initial lines containing key-value pairs are extracted as slide properties:
 
-```remark
-name: agenda
-class: middle, center
+## brew cask
 
-# Agenda
+http://caskroom.io/
 
-The name of this slide is {{ name }}.
+A CLI workflow for the administration of Mac applications distributed as binaries
+
+- Install
+
+```sh
+$ brew install caskroom/cask/brew-cask
 ```
 
-Slide properties serve multiple purposes:
+- Usage
 
-* Naming and styling slides using properties `name` and `class`
-
-* Using slides as templates using properties `template` and `layout`
-
-* Expansion of `{{ property }}` expressions to property values
-
-See the [complete list](https://github.com/gnab/remark/wiki/Markdown#slide-properties) of slide properties.
-]
----
-class: inverse2
-.left-column[
-  ## Markdown extensions
-  ### - Slide properties
-  ### - Content classes
-]
-.right-column[
-Any occurences of one or more dotted CSS class names followed by square brackets are replaced with the contents of the brackets with the specified classes applied:
-
-```remark
-.footnote[.red.bold[*] Important footnote]
+```sh
+$ brew cask install google-chrome
 ```
 
-Resulting HTML extract:
-
-```xml
-<span class="footnote">
-  <span class="red bold">*</span> Important footnote
-</span>
-```
-]
 ---
-class: inverse2
-.left-column[
-  ## Markdown extensions
-  ### - Slide properties
-  ### - Content classes
-  ### - Syntax Highlighting
-]
-.right-column[
-Code blocks can be syntax highlighted by specifying a language from the set of [supported languages](https://github.com/gnab/remark/wiki/Configuration#highlighting).
 
-Using [GFM](http://github.github.com/github-flavored-markdown/) fenced code blocks you can easily specify highlighting language:
+class: center, middle
 
-.pull-left[
+## zsh
 
-<pre><code>```javascript
-function add(a, b)
-  return a + b
-end
-```</code></pre>
-]
-.pull-right[
-
-<pre><code>```ruby
-def add(a, b)
-  a + b
-end
-```</code></pre>
-]
-
-A number of highlighting [styles](https://github.com/gnab/remark/wiki/Configuration#highlighting) are available, including several well-known themes from different editors and IDEs.
-
-]
 ---
-class: inverse3
+
 .left-column[
-  ## Presenter mode
+## zsh
+### 설치
 ]
+
 .right-column[
-To help out with giving presentations, a presenter mode comprising the
-following features is provided:
-
-- Display of slide notes for the current slide, to help you remember
-  key points
-
-- Display of upcoming slide, to let you know what's coming
-
-- Cloning of slideshow for viewing on extended display
-]
----
-class: inverse3
-.left-column[
-  ## Presenter mode
-  ### - Inline notes
-]
-.right-column[
-Just like three dashes separate slides,
-three question marks separate slide content from slide notes:
+Install
 
 ```
-Slide 1 content
+$ brew install zsh
 
-*???
+$ sudo vim /etc/shells
+/usr/local/bin/zsh 라인 추가
 
-Slide 1 notes
-
----
-
-Slide 2 content
-
-*???
-
-Slide 2 notes
+$ chsh -s /usr/local/bin/zsh
 ```
 
-Slide notes are also treated as Markdown, and will be converted in the
-same manner slide content is.
+[oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-Pressing __P__ will toggle presenter mode.
+- plugin, [theme](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes) 포함
+
+<img src="https://cloud.githubusercontent.com/assets/2618447/6316862/70f58fb6-ba03-11e4-82c9-c083bf9a6574.png" width="100%">
+
 ]
-???
-Congratulations, you just toggled presenter mode!
 
-Now press __P__ to toggle it back off.
+
 ---
-class: inverse3
+
 .left-column[
-  ## Presenter mode
-  ### - Inline notes
-  ### - Cloned view
+## zsh
+### 설치
+### 단축키
 ]
+
 .right-column[
-Presenter mode of course makes no sense to the audience.
+앞으로 / 뒤로
+- `^a` : 맨 앞으로
+- `^e` : 맨 뒤로
+- `^b` : 한칸 앞으로
+- `^f` : 한칸 뒤로 
 
-Creating a cloned view of your slideshow lets you:
+라인 버리기
+- `^u` : 현재 라인 삭제하기
+- `^l` : 스크린 클리어
 
-- Move the cloned view to the extended display visible to the audience
+kill / yank
+- `^d` : 한 글자 kill
+- `^k` : 한 줄 kill
+- `^y` : yank
 
-- Put the original slideshow in presenter mode
-
-- Navigate as usual, and the cloned view will automatically keep up with the original
-
-Pressing __C__ will open a cloned view of the current slideshow in a new
-browser window.
+kill / suspend
+- `^c` : 현재 프로세스 종료
+- `^z` : 현재 프로세스 중단
 ]
+
+.footnote[```$ bindkey```]
+
 ---
-## It's time to get started!
----
+
 .left-column[
-  ## Getting started
+## zsh
+### 설치
+### 단축키
+### 디렉토리 이동
 ]
+
 .right-column[
-Getting up and running is done in only a few steps:
 
-1. Visit the [project site](http://github.com/gnab/remark)
+상위 디렉토리 이동 
 
-2. Follow the steps in the Getting Started section
+```sh
+$ ..
+$ ...
+$ ...
+$ cd..
+$ cd...
+$ cd....
+```
 
-For more information on using remark, please check out the [wiki](https://github.com/gnab/remark/wiki) pages.
+디렉토리 이동
+
+```sh
+$ cd work
+$ work/
+$ cd ~
+$ cd -      # 이전 디렉토리로 이동
+$ cd -<TAB> # 이전 디렉토리 history
+
+```
 ]
+
 ---
-name: last-page
 
-## That's all folks (for now)!
+.left-column[
+## zsh
+### 설치
+### 단축키
+### 디렉토리 이동
+### 장점
+]
 
-Slideshow created using [remark](http://github.com/gnab/remark).
+.right-column[
+
+auto completion
+
+```sh
+$ cd <TAB>
+$ git co<TAB>
+$ echo $gop<TAB>
+$ kill <TAB>
+```
+
+git 상태 prompt 표시
+
+
+기타 
+
+```sh
+$ mkdir directory
+$ cd directory
+
+$ mkdir directory && cd $_
+
+$ take directory
+```
+
+]
+
+---
+
+## Z
+
+https://github.com/rupa/z
+
+디렉토리 이동을 도와주는 프로그램
+
+- Install
+
+```sh
+$ brew install z
+
+.zshrc에 라인 추가
+
+$ vi ~/.zshrc
+. `brew --prefix`/etc/profile.d/z.sh
+```
+
+- Usage
+
+```sh
+$ z directory
+```
+
+---
+
+## vim
+
+기본 에디터로 쓰지 않더라도 git commit 로그 작성할 정도는 쓸 수 있어야
+
+참고
+
+- [Vim adventure](http://vim-adventures.com/)
+- [Vimium chrome extension](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
+
+
+---
+
+## 파일 내용보는 도구들 
+
+- more
+- less
+- head
+- tail 
+- cat
+
+
+```
+$ tail log.txt
+$ tail -n 100 log.txt
+$ tail -f log.txt
+```
+
+---
+
+## 디렉토리
+
+특정 디렉토리의 용량 보기
+
+```
+$ du -sh directory
+```
+
+파일 시스템 사용량 보기
+
+```
+$ df -h
+```
+
+디렉토리 구조 트리형태로 출력하기
+
+```
+$ tree
+```
+
+검색어랑 매칭되는 파일 찾기
+
+```sh
+$ find . -name "event.*"
+```
+
+
+검색어랑 매칭되는 내용을 가지고 있는 파일 찾기
+
+```sh
+$ grep -ir --inclucde="*.md" map .
+```
+
+
+---
+
+## 프로세스
+
+- top
+- htop
+  - install
+  ```sh
+  $ brew install htop
+  ```
+- fg
+- bg
+- kill
+
+---
+
+## git
+
+### tig
+
+- Install
+
+```
+$ brew install tig
+```
+
+- Usage
+
+```
+$ tig
+$ tig log
+$ tig show
+$ tig blame
+$ tig grep
+$ tig stash
+$ tig status
+```
+
+---
+
+class: center, middle
+
+## 웹관련
+
+---
+
+## curl
+
+```
+$ telnet google.com 80
+$ curl google.com
+$ curl -i google.com
+```
+
+API test
+
+```sh
+$ curl -i -H "Content-Type: application/json" -X POST \
+  -d '{"name":"toy","category":"travel"}' \
+  http://example.com/api/item
+
+i – show response headers
+H – pass request headers to the resource
+X – pass a HTTP method name
+d – pass in parameters enclosed in quotes; multiple parameters are separated by ‘&’
+```
+
+
+---
+
+.left-column[
+## 로컬 웹사이트 접근
+### xipio
+]
+
+.right-column[
+http://xip.io/ (37Signals)
+
+wildcard DNS for everyone 
+
+```
+          `10.0.0.1`.xip.io   resolves to   10.0.0.1
+      www.`10.0.0.1`.xip.io   resolves to   10.0.0.1
+   mysite.`10.0.0.1`.xip.io   resolves to   10.0.0.1
+  foo.bar.`10.0.0.1`.xip.io   resolves to   10.0.0.1
+```
+
+- 장점
+  - 호스트 파일 수정 없이 사용가능. 특히 모바일 디바이스
+
+- 단점 
+  - 지정 `ip`에 접근가능한 디바이스만 사용 가능
+]
+
+---
+
+.left-column[
+## 로컬 웹사이트 접근
+### xipio
+### finch
+]
+
+.right-column[
+
+https://meetfinch.com/
+
+로컬 웹사이트를 외부에서 접속 가능하게 하는 서비스
+
+
+```
+$ npm install --global finch
+$ finch register
+$ finch forward http://127.0.0.1:9000
+```
+
+- 장점
+  - public 하지 않은 `ip`에도 접근 가능
+
+- 단점 
+  - 느리다.
+]
+
+---
+
+## Simple web server
+
+```
+$ python -m SimpleHTTPServer 5000
+$ ruby -run -e httpd . -p 5000
+$ php -S localhost:5000
+```
+
+---
+
+## 기타
+
+- tmux
+- vagrant
+- markdown
+- zen coding
+
+---
+
+class: center, middle
+
+## QnA
+
+---
+
+class: center, middle
+
+## 감사합니다 !!!!

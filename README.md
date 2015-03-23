@@ -1,31 +1,12 @@
-# Remark Starterify
+# 알아두면 유용한 명령어들 
 
-:rocket: Fast develop & deploy [Remark](https://github.com/gnab/remark) slideshow based on [react-starterify](https://github.com/chitacan/react-starterify)
+[undefine:D 2015 3월 오프모임](http://onoffmix.com/event/43376) 발표자료 (based on [remark-starterify](https://github.com/chitacan/remark-starterify))
 
 ## Usage
 
-Make sure you have [node](https://nodejs.org/), [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md), [bower](http://bower.io/#install-bower) :hand:
+Make sure you have [node](https://nodejs.org/) (v0.10.*), [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md), [bower](http://bower.io/#install-bower) :hand:
 
-Before to get started, clone this project. (remove `./git` to fresh start)
-
-    $ git clone chitacan/remark-starterify
-    $ cd remark-starterify
-    $ rm -rf .git/
+    $ git clone https://github.com/yhbyun/undefined-cli-tools
+    $ cd hubot-your-friend
     $ npm install && bower install
-
-Start developing with
-
     $ gulp watch
-
-Build with
-
-    $ gulp build
-
-Depoly to `gh-pages` with
-
-    $ gulp deploy
-
-## Make Slideshow
-
-* To make slideshow, edit `app/content/slide.md` ([see](https://github.com/gnab/remark/wiki/Markdown))
-* To make script component(with [react](http://facebook.github.io/react/)), edit `app/scripts/app.coffee`
