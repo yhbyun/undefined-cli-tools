@@ -20,7 +20,7 @@ Server Side Developer
 \- Classic ASP<br>
 \- PHP
 
-<img src="/img/profile.jpg" style="border-radius:200px" width="150">
+<img src="img/profile.jpg" style="border-radius:200px" width="150">
 
 
 ---
