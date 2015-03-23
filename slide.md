@@ -186,6 +186,8 @@ $ cd....
 ```sh
 $ cd work
 $ work/
+$ cd /u/l/b<TAB>
+$ cd bin share
 $ cd ~
 $ cd -      # 이전 디렉토리로 이동
 $ cd -<TAB> # 이전 디렉토리 history
