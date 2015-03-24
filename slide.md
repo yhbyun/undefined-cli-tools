@@ -319,7 +319,7 @@ $ find . -name "event.*"
 검색어랑 매칭되는 내용을 가지고 있는 파일 찾기
 
 ```sh
-$ grep -ir --inclucde="*.md" map .
+$ grep -ir --include="*.md" map .
 ```
 
 
