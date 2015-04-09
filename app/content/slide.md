@@ -11,7 +11,7 @@ class: center, middle
 ---
 
 layout: false
-class: center, middle
+class: center, middle, inverse1
 
 ## @river
 
@@ -25,7 +25,7 @@ Server Side Developer
 
 ---
 
-class: center, middle
+class: center, middle, inverse1
 
 ### 기본 명령어 중 제가 자주 사용하는 것들
 ### 몰라도 되지만 알면 조금이라도 편할 수 있는 것들
@@ -33,7 +33,7 @@ class: center, middle
 
 ---
 
-layout: false
+class: inverse1
 
 ## Agenda
 
@@ -186,9 +186,12 @@ $ cd....
 ```sh
 $ cd work
 $ work/
+$ cd /u/l/b<TAB>
+$ cd bin share
 $ cd ~
 $ cd -      # 이전 디렉토리로 이동
 $ cd -<TAB> # 이전 디렉토리 history
+$ d
 
 ```
 ]
@@ -257,6 +260,8 @@ $ z directory
 
 ---
 
+class: inverse2
+
 ## vim
 
 기본 에디터로 쓰지 않더라도 git commit 로그 작성할 정도는 쓸 수 있어야
@@ -268,6 +273,8 @@ $ z directory
 
 
 ---
+
+class: inverse2
 
 ## 파일 내용보는 도구들 
 
@@ -285,6 +292,8 @@ $ tail -f log.txt
 ```
 
 ---
+
+class: inverse2
 
 ## 디렉토리
 
@@ -316,11 +325,13 @@ $ find . -name "event.*"
 검색어랑 매칭되는 내용을 가지고 있는 파일 찾기
 
 ```sh
-$ grep -ir --inclucde="*.md" map .
+$ grep -ir --include="*.md" map .
 ```
 
 
 ---
+
+class: inverse2
 
 ## 프로세스
 
@@ -335,6 +346,8 @@ $ grep -ir --inclucde="*.md" map .
 - kill
 
 ---
+
+class: inverse2
 
 ## git
 
@@ -360,11 +373,13 @@ $ tig status
 
 ---
 
-class: center, middle
+class: center, middle, inverse3
 
 ## 웹관련
 
 ---
+
+class: inverse3
 
 ## curl
 
@@ -389,6 +404,8 @@ d – pass in parameters enclosed in quotes; multiple parameters are separated b
 
 
 ---
+
+class: inverse3
 
 .left-column[
 ## 로컬 웹사이트 접근
@@ -415,6 +432,8 @@ wildcard DNS for everyone
 ]
 
 ---
+
+class: inverse3
 
 .left-column[
 ## 로컬 웹사이트 접근
@@ -444,6 +463,8 @@ $ finch forward http://127.0.0.1:9000
 
 ---
 
+class: inverse3
+
 ## Simple web server
 
 ```
@@ -453,6 +474,8 @@ $ php -S localhost:5000
 ```
 
 ---
+
+class: inverse3
 
 ## 기타
 
