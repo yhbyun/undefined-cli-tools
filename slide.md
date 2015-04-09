@@ -301,6 +301,7 @@ class: inverse2
 
 ```
 $ du -sh directory
+$ cdu -i 
 ```
 
 파일 시스템 사용량 보기
@@ -312,15 +313,23 @@ $ df -h
 디렉토리 구조 트리형태로 출력하기
 
 ```
+$ brew install tree
 $ tree
 ```
+
+.footnote[.red[*] [cdu for OSX](https://github.com/yhbyun/cdu-osx)]
+
+---
+
+class: inverse2
+
+## 파일 검색
 
 검색어랑 매칭되는 파일 찾기
 
 ```sh
 $ find . -name "event.*"
 ```
-
 
 검색어랑 매칭되는 내용을 가지고 있는 파일 찾기
 
@@ -337,10 +346,9 @@ class: inverse2
 
 - top
 - htop
-  - install
-  ```sh
-  $ brew install htop
-  ```
+```sh
+$ brew install htop
+```
 - fg
 - bg
 - kill
